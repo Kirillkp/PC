@@ -21,13 +21,22 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .green
+        contentView.backgroundColor = .white
+        contentView.layer.borderColor = UIColor.lightGray.cgColor
+        contentView.layer.borderWidth = 2
         contentView.layer.cornerRadius = contentView.bounds.height / 2
         setConstraint()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    weak var presenter: DayCellPresenterType? {
+        willSet(presenter) {
+            guard let presenter = presenter else { return }
+            dayLabel.text = String(presenter.day)
+        }
     }
     
 }

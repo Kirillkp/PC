@@ -7,6 +7,19 @@
 
 import Foundation
 
-class DayCellPresenter {
+protocol DayCellPresenterType: AnyObject {
+    var day: Int { get }
+}
 
+class DayCellPresenter: DayCellPresenterType {
+   
+    private var model: TrainingData
+    
+    var day: Int {
+        return model.day
+    }
+    
+    init(model: TrainingData) {
+        self.model = model
+    }
 }
