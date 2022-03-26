@@ -1,0 +1,43 @@
+[{
+    "day": 1,
+    "training" : [{
+        "time": 2,
+        "name": "Прямая",
+        "image": "childInvalidName.png"
+    }, {
+        "time": 3,
+        "name": "Отдых",
+        "image": "adultsInvalidName.png"
+    }, {
+        "time": 4,
+        "name": "Боковая",
+        "image": "oldInvalidName.png"
+    }, {
+        "time": 5,
+        "name": "Другой бок",
+        "image": "animalInvalidName.png"
+    }]
+}, {
+    "day": 2,
+    "training" : [{
+        "time": 20,
+        "name": "Прямая",
+        "image": "childInvalidName.png"
+    }, {
+        "time": 20,
+        "name": "Обратная",
+        "image": "adultsInvalidName.png"
+    }, {
+        "time": 30,
+        "name": "Боковая",
+        "image": "oldInvalidName.png"
+    }, {
+        "time": 40,
+        "name": "Другой бок",
+        "image": "animalInvalidName.png"
+    }, {
+        "time": 50,
+        "name": "Растяжка",
+        "image": "eventsInvalidName.png"
+    }]
+}]

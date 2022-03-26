@@ -1,0 +1,6 @@
+framework module Pods_pg {
+  umbrella header "Pods-pg-umbrella.h"
+
+  export *
+  module * { export * }
+}
