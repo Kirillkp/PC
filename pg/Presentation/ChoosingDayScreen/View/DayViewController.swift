@@ -12,30 +12,10 @@ class DayViewController: UIViewController {
     
     var timer = Timer()
     
-    var arrayTrain: [TrainingData] = []
-    var currentTrain: [TrainingData] = []
+    var presenter: DayPresenterType = DayPresenter()
     
     private let itemsPerRow: CGFloat = 4
     private let sectionInserts = UIEdgeInsets(top: 15, left: 15, bottom: 5, right: 15)
-    
-    private let circleTimerView = CircleTimerView()
-    
-    private let timeLabelTimer: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 80)
-        label.text = "0"
-        label.tintColor = .darkGray
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let imageView: UIImageView = {
-        let image = UIImageView()
-        image.backgroundColor = .purple
-        image.layer.cornerRadius = 10
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-    }()
     
     private let buttonPlay: UIButton = {
         let button = UIButton()
@@ -50,6 +30,8 @@ class DayViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
+        collectionView.register(DayCollectionViewCell.self, forCellWithReuseIdentifier: DayCollectionViewCell.identifier)
+        collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
@@ -58,18 +40,8 @@ class DayViewController: UIViewController {
         super.viewDidLoad()
         title = "Plank Chalenge"
         
-        circleTimerView.translatesAutoresizingMaskIntoConstraints = false
-        circleTimerView.backgroundColor = .white
-        circleTimerView.trackFillColor = .green
-        circleTimerView.trackBackgroundColor = .gray
-        circleTimerView.progress = 1
-        circleTimerView.trackWidth = 14
-        
-        
         view.backgroundColor = .white
         navigationController?.navigationBar.prefersLargeTitles = true
-        collectionView.register(DayCollectionViewCell.self, forCellWithReuseIdentifier: DayCollectionViewCell.identifier)
-        collectionView.backgroundColor = .red
         buttonPlay.addTarget(self, action: #selector(tappedPlay(_:)), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -86,19 +58,42 @@ class DayViewController: UIViewController {
 extension DayViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayTrain.count
+        print("Кол-во в DayViewController \(presenter.numbersOfRows())")
+        return presenter.numbersOfRows()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DayCollectionViewCell.identifier, for: indexPath) as! DayCollectionViewCell
-        cell.dayLabel.text = String(arrayTrain[indexPath.row].day)
+        let cellPresenter = presenter.dayArrayTrain(indexPath: indexPath)
+        cell.presenter = cellPresenter
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        currentTrain.removeAll()
-        currentTrain.append(arrayTrain[indexPath.row])
-        print(currentTrain)
+        presenter.removeCurrentTrain()
+        presenter.appendCurrentArray(indexPath: indexPath)
+    }
+    
+}
+
+//MARK: SetConstraint
+extension DayViewController {
+    
+    private func setConstraint() {
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-20)
+        }
+        
+        view.addSubview(buttonPlay)
+        buttonPlay.snp.makeConstraints { make in
+            make.top.equalTo(collectionView.snp.bottom).offset(30)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-20)
+        }
     }
     
 }
@@ -125,25 +120,5 @@ extension DayViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-//MARK: SetConstraint
-extension DayViewController {
-    
-    private func setConstraint() {
-        view.addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
-            make.leading.equalTo(view.snp.leading).offset(20)
-            make.trailing.equalTo(view.snp.trailing).offset(-20)
-        }
-        
-        view.addSubview(buttonPlay)
-        buttonPlay.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(30)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
-            make.leading.equalTo(view.snp.leading).offset(20)
-            make.trailing.equalTo(view.snp.trailing).offset(-20)
-        }
-    }
-    
-}
+
 

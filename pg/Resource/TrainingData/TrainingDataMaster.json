@@ -41,7 +41,7 @@
         "image": "eventsInvalidName.png"
     }]
 }, {
-    "day": 2,
+    "day": 3,
     "training" : [{
         "time": 20,
         "name": "Прямая",
@@ -64,7 +64,7 @@
         "image": "eventsInvalidName.png"
     }]
 }, {
-    "day": 2,
+    "day": 4,
     "training" : [{
         "time": 20,
         "name": "Прямая",
@@ -87,3 +87,4 @@
         "image": "eventsInvalidName.png"
     }]
 }]
+
