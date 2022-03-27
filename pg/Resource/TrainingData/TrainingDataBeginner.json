@@ -1,21 +1,21 @@
 [{
     "day": 1,
     "training" : [{
-        "time": 2,
-        "name": "Прямая",
-        "image": "childInvalidName.png"
-    }, {
-        "time": 3,
-        "name": "Отдых",
-        "image": "adultsInvalidName.png"
-    }, {
-        "time": 4,
-        "name": "Боковая",
-        "image": "oldInvalidName.png"
-    }, {
         "time": 5,
-        "name": "Другой бок",
-        "image": "animalInvalidName.png"
+        "name": "Готовься!",
+        "image": ""
+    }, {
+        "time": 10,
+        "name": "Планка на согнутых руках",
+        "image": "ПланкаНаСогнутыхРуках"
+    }, {
+        "time": 11,
+        "name": "Планка на вытянутых руках",
+        "image": "ПланкаНаВытянутыхРуках.png"
+    }, {
+        "time": 12,
+        "name": "Планка боковая",
+        "image": "ПланкаБоковая.png"
     }]
 }, {
     "day": 2,

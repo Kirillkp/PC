@@ -13,6 +13,7 @@ protocol DayPresenterType {
     func appendCurrentArray(indexPath: IndexPath)
     func dayArrayTrain(indexPath: IndexPath) -> DayCellPresenterType?
     func appendDataArrayTrain(data: [TrainingData])
+    func fetchCurrentTrain() -> [TrainingData]
 }
 
 class DayPresenter: DayPresenterType {
@@ -42,5 +43,7 @@ class DayPresenter: DayPresenterType {
         return DayCellPresenter(model: arrayTrain)
     }
     
-    
+    func fetchCurrentTrain() -> [TrainingData] {
+        return currentTrain
+    }
 }
