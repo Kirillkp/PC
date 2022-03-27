@@ -20,6 +20,9 @@
 		8A93CC8C27E244AF00B9BAC0 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93CC8B27E244AF00B9BAC0 /* DayCollectionViewCell.swift */; };
 		8A93CC9627E50FDE00B9BAC0 /* DayPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93CC9527E50FDE00B9BAC0 /* DayPresenter.swift */; };
 		8A93CC9827E5101000B9BAC0 /* DayCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A93CC9727E5101000B9BAC0 /* DayCellPresenter.swift */; };
+		8AA6703527F0728A007BCED0 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6703427F0728A007BCED0 /* TrainingViewController.swift */; };
+		8AA6703727F078FD007BCED0 /* TrainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6703627F078FD007BCED0 /* TrainButton.swift */; };
+		8AA6703927F08328007BCED0 /* TrainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA6703827F08328007BCED0 /* TrainingPresenter.swift */; };
 		8AE17A3A27EF85430021229A /* DifficultyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE17A3927EF85430021229A /* DifficultyButton.swift */; };
 		8AE17A3C27EFA1AC0021229A /* TrainingDataBeginner.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AE17A3B27EFA1AC0021229A /* TrainingDataBeginner.json */; };
 		8AE17A3F27EFA3EB0021229A /* TrainingDataExpert.json in Resources */ = {isa = PBXBuildFile; fileRef = 8AE17A3E27EFA3EB0021229A /* TrainingDataExpert.json */; };
@@ -32,8 +35,6 @@
 		8A0F38F627EF1EA6003B481A /* DataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
 		8A0F390027EF4CBC003B481A /* DifficultyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyPresenter.swift; sourceTree = "<group>"; };
 		8A0F390627EF4D99003B481A /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
-		8A0F390A27EF4EB9003B481A /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
-		8A0F390C27EF4EB9003B481A /* TrainingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPresenter.swift; sourceTree = "<group>"; };
 		8A1F491B27EA63A800366861 /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
 		8A6B1D7227E2339100ED7403 /* pg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6B1D7527E2339100ED7403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +46,9 @@
 		8A93CC8B27E244AF00B9BAC0 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A93CC9527E50FDE00B9BAC0 /* DayPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPresenter.swift; sourceTree = "<group>"; };
 		8A93CC9727E5101000B9BAC0 /* DayCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCellPresenter.swift; sourceTree = "<group>"; };
+		8AA6703427F0728A007BCED0 /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
+		8AA6703627F078FD007BCED0 /* TrainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainButton.swift; sourceTree = "<group>"; };
+		8AA6703827F08328007BCED0 /* TrainingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingPresenter.swift; sourceTree = "<group>"; };
 		8AE17A3927EF85430021229A /* DifficultyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyButton.swift; sourceTree = "<group>"; };
 		8AE17A3B27EFA1AC0021229A /* TrainingDataBeginner.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrainingDataBeginner.json; sourceTree = "<group>"; };
 		8AE17A3E27EFA3EB0021229A /* TrainingDataExpert.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrainingDataExpert.json; sourceTree = "<group>"; };
@@ -121,7 +125,7 @@
 		8A0F390927EF4EB8003B481A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8A0F390A27EF4EB9003B481A /* TrainingViewController.swift */,
+				8AA6703427F0728A007BCED0 /* TrainingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +133,7 @@
 		8A0F390B27EF4EB9003B481A /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				8A0F390C27EF4EB9003B481A /* TrainingPresenter.swift */,
+				8AA6703827F08328007BCED0 /* TrainingPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -188,6 +192,7 @@
 			children = (
 				8A1F491B27EA63A800366861 /* CircleTimerView.swift */,
 				8AE17A3927EF85430021229A /* DifficultyButton.swift */,
+				8AA6703627F078FD007BCED0 /* TrainButton.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -372,8 +377,11 @@
 				8A6B1D7627E2339100ED7403 /* AppDelegate.swift in Sources */,
 				8A93CC8C27E244AF00B9BAC0 /* DayCollectionViewCell.swift in Sources */,
 				8A0F38F727EF1EA6003B481A /* DataMethods.swift in Sources */,
+				8AA6703527F0728A007BCED0 /* TrainingViewController.swift in Sources */,
+				8AA6703727F078FD007BCED0 /* TrainButton.swift in Sources */,
 				8A6B1D7827E2339100ED7403 /* SceneDelegate.swift in Sources */,
 				8AE17A3A27EF85430021229A /* DifficultyButton.swift in Sources */,
+				8AA6703927F08328007BCED0 /* TrainingPresenter.swift in Sources */,
 				8A0F390727EF4D99003B481A /* DifficultyViewController.swift in Sources */,
 				8A0F390527EF4CBC003B481A /* DifficultyPresenter.swift in Sources */,
 				8A93CC9827E5101000B9BAC0 /* DayCellPresenter.swift in Sources */,

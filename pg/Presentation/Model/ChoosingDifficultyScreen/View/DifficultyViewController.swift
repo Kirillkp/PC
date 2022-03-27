@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DifficultyViewController: UIViewController {
+final class DifficultyViewController: UIViewController {
     
     private let resourceBegginer = "TrainingDataBeginner"
     private let resourceExpert = "TrainingDataExpert"

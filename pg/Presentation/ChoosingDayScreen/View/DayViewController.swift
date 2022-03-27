@@ -8,9 +8,7 @@
 import UIKit
 import SnapKit
 
-class DayViewController: UIViewController {
-    
-    var timer = Timer()
+final class DayViewController: UIViewController {
     
     var presenter: DayPresenterType = DayPresenter()
     
@@ -19,7 +17,7 @@ class DayViewController: UIViewController {
     
     private let buttonPlay: UIButton = {
         let button = UIButton()
-        button.setTitle("Начать 1 день", for: .normal)
+        button.setTitle("Начать тренировку", for: .normal)
         button.backgroundColor = .blue
         button.tintColor = .white
         button.layer.cornerRadius = 10
@@ -38,10 +36,9 @@ class DayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Plank Chalenge"
-        
+        title = "Выберите день"
         view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = true
+        
         buttonPlay.addTarget(self, action: #selector(tappedPlay(_:)), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -49,7 +46,9 @@ class DayViewController: UIViewController {
     }
  
     @objc func tappedPlay(_ sender: UIButton) {
-        
+        let viewTraining = TrainingViewController()
+        viewTraining.presenter.appendCurrentTrain(train: presenter.fetchCurrentTrain())
+        navigationController?.pushViewController(viewTraining, animated: true)
     }
 
 }
@@ -93,6 +92,7 @@ extension DayViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
             make.leading.equalTo(view.snp.leading).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-20)
+            make.height.equalTo(50)
         }
     }
     
