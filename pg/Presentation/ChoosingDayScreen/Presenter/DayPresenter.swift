@@ -9,17 +9,14 @@ import Foundation
 
 protocol DayPresenterType {
     func numbersOfRows() -> Int
-    func removeCurrentTrain()
-    func appendCurrentArray(indexPath: IndexPath)
     func dayArrayTrain(indexPath: IndexPath) -> DayCellPresenterType?
     func appendDataArrayTrain(data: [TrainingData])
-    func fetchCurrentTrain() -> [TrainingData]
+    func fetchArrayTrainIndexPath(indexPath: IndexPath) -> TrainingData
 }
 
-class DayPresenter: DayPresenterType {
+final class DayPresenter: DayPresenterType {
     
     var arrayTrain: [TrainingData] = []
-    var currentTrain: [TrainingData] = []
     
     func appendDataArrayTrain(data: [TrainingData]) {
         arrayTrain.append(contentsOf: data)
@@ -29,21 +26,14 @@ class DayPresenter: DayPresenterType {
         return arrayTrain.count
     }
     
-    func removeCurrentTrain() {
-        return currentTrain.removeAll()
-    }
-    
-    func appendCurrentArray(indexPath: IndexPath) {
-        currentTrain.append(arrayTrain[indexPath.row])
-        print("Выбрал тренировку в DayViewController \(currentTrain))")
+    func fetchArrayTrainIndexPath(indexPath: IndexPath) -> TrainingData {
+        return arrayTrain[indexPath.row]
     }
     
     func dayArrayTrain(indexPath: IndexPath) -> DayCellPresenterType? {
         let arrayTrain = arrayTrain[indexPath.row]
+        print("Тренировка в ячейку DayPresenter \(arrayTrain)")
         return DayCellPresenter(model: arrayTrain)
     }
-    
-    func fetchCurrentTrain() -> [TrainingData] {
-        return currentTrain
-    }
+
 }

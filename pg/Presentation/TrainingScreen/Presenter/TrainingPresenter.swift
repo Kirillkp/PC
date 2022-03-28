@@ -57,16 +57,13 @@ final class TrainingPresenter: TrainingPresenterType {
     func pauseTimer() {
         timer.invalidate()
         pause = true
-        print("-----STOP------")
     }
     
     func continueTimer() {
         pause = false
-        print("-----START------")
     }
     
     func skipTrain() {
-        print("Условие пропуска \(current < currentTrain[0].training.count)")
         if current < currentTrain[0].training.count {
             current += 1
             print(current)

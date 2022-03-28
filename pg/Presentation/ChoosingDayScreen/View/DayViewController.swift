@@ -15,16 +15,6 @@ final class DayViewController: UIViewController {
     private let itemsPerRow: CGFloat = 4
     private let sectionInserts = UIEdgeInsets(top: 15, left: 15, bottom: 5, right: 15)
     
-    private let buttonPlay: UIButton = {
-        let button = UIButton()
-        button.setTitle("Начать тренировку", for: .normal)
-        button.backgroundColor = .blue
-        button.tintColor = .white
-        button.layer.cornerRadius = 10
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private let collectionView: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
@@ -38,17 +28,10 @@ final class DayViewController: UIViewController {
         super.viewDidLoad()
         title = "Выберите день"
         view.backgroundColor = .white
-        
-        buttonPlay.addTarget(self, action: #selector(tappedPlay(_:)), for: .touchUpInside)
+
         collectionView.delegate = self
         collectionView.dataSource = self
         setConstraint()
-    }
- 
-    @objc func tappedPlay(_ sender: UIButton) {
-        let viewTraining = TrainingViewController()
-        viewTraining.presenter.appendCurrentTrain(train: presenter.fetchCurrentTrain())
-        navigationController?.pushViewController(viewTraining, animated: true)
     }
 
 }
@@ -69,8 +52,10 @@ extension DayViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.removeCurrentTrain()
-        presenter.appendCurrentArray(indexPath: indexPath)
+        let trainDescriptionView = TrainingDescriptionViewController()
+        print("Отправил currentTrain в TrainDescription \(presenter.fetchArrayTrainIndexPath(indexPath: indexPath))")
+        trainDescriptionView.presenter.appendDataCurrentTrain(data: presenter.fetchArrayTrainIndexPath(indexPath: indexPath))
+        navigationController?.pushViewController(trainDescriptionView, animated: true)
     }
     
 }
@@ -84,15 +69,7 @@ extension DayViewController {
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(40)
             make.leading.equalTo(view.snp.leading).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-20)
-        }
-        
-        view.addSubview(buttonPlay)
-        buttonPlay.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom).offset(30)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-30)
-            make.leading.equalTo(view.snp.leading).offset(20)
-            make.trailing.equalTo(view.snp.trailing).offset(-20)
-            make.height.equalTo(50)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
     

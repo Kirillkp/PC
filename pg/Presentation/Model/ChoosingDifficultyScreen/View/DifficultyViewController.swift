@@ -63,7 +63,6 @@ final class DifficultyViewController: UIViewController {
         let viewDay = DayViewController()
         DataMethods.shared.fetchDataTrain(forResource: resourceBegginer) { data in
             viewDay.presenter.appendDataArrayTrain(data: data)
-            print("Отправил dataBegginer в DayViewController \(data)")
         }
         navigationController?.pushViewController(viewDay, animated: true)
     }
@@ -72,7 +71,6 @@ final class DifficultyViewController: UIViewController {
         let viewDay = DayViewController()
         DataMethods.shared.fetchDataTrain(forResource: resourceExpert) { data in
             viewDay.presenter.appendDataArrayTrain(data: data)
-            print("Отправил dataExpert в DayViewController \(data)")
         }
         navigationController?.pushViewController(viewDay, animated: true)
     }
@@ -81,7 +79,6 @@ final class DifficultyViewController: UIViewController {
         let viewDay = DayViewController()
         DataMethods.shared.fetchDataTrain(forResource: resourceMaster) { data in
             viewDay.presenter.appendDataArrayTrain(data: data)
-            print("Отправил dataMaster в DayViewController \(data)")
         }
         navigationController?.pushViewController(viewDay, animated: true)
     }
