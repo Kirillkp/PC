@@ -11,7 +11,7 @@ protocol DayCellPresenterType: AnyObject {
     var day: Int { get }
 }
 
-class DayCellPresenter: DayCellPresenterType {
+final class DayCellPresenter: DayCellPresenterType {
    
     private var model: TrainingData
     

@@ -9,7 +9,7 @@ import Foundation
 
 struct TrainingData: Codable {
     let day: Int
-    let training: [Training]
+    var training: [Training]
 }
 
 struct Training: Codable {
