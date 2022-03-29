@@ -15,9 +15,17 @@ final class TrainingDescriptionCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "Прямая с вытянутыми руками"
         label.textColor = .gray
-        label.backgroundColor = .green
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let timeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Время:"
+        label.textColor = .gray
+        label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -26,7 +34,6 @@ final class TrainingDescriptionCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.text = "20"
         label.textColor = .gray
-        label.backgroundColor = .red
         label.font = UIFont.boldSystemFont(ofSize: 17)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -37,16 +44,12 @@ final class TrainingDescriptionCollectionViewCell: UICollectionViewCell {
         image.layer.cornerRadius = 10
         image.clipsToBounds = true
         image.contentMode = .scaleAspectFit
-        image.backgroundColor = .magenta
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .lightGray
-        contentView.layer.borderColor = UIColor.lightGray.cgColor
-        contentView.layer.borderWidth = 2
         contentView.layer.cornerRadius = 20
         setConstraint()
     }
@@ -75,12 +78,17 @@ extension TrainingDescriptionCollectionViewCell {
             make.trailing.equalTo(imageTrainView.snp.leading).offset(-20)
         }
         
-        contentView.addSubview(timeTrainLabel)
-        timeTrainLabel.snp.makeConstraints { make in
+        contentView.addSubview(timeLabel)
+        timeLabel.snp.makeConstraints { make in
             make.top.equalTo(nameTrainLabel.snp.bottom).offset(20)
             make.leading.equalTo(contentView.snp.leading).offset(20)
-            make.trailing.equalTo(imageTrainView.snp.leading).offset(-20)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
+        }
+        
+        contentView.addSubview(timeTrainLabel)
+        timeTrainLabel.snp.makeConstraints { make in
+            make.centerYWithinMargins.equalTo(timeLabel.snp.centerYWithinMargins)
+            make.leading.equalTo(timeLabel.snp.trailing).offset(5)
         }
     }
 }

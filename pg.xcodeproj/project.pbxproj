@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		8A0F38F527EF1A6D003B481A /* TrainingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F38F427EF1A6D003B481A /* TrainingData.swift */; };
 		8A0F38F727EF1EA6003B481A /* DataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F38F627EF1EA6003B481A /* DataMethods.swift */; };
-		8A0F390527EF4CBC003B481A /* DifficultyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F390027EF4CBC003B481A /* DifficultyPresenter.swift */; };
 		8A0F390727EF4D99003B481A /* DifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0F390627EF4D99003B481A /* DifficultyViewController.swift */; };
 		8A1F491C27EA63A800366861 /* CircleTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1F491B27EA63A800366861 /* CircleTimerView.swift */; };
+		8A57804A27F1EB54007D2441 /* TrainExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A57804927F1EB54007D2441 /* TrainExplanationViewController.swift */; };
+		8A57804C27F1EB66007D2441 /* TrainExplanationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A57804B27F1EB66007D2441 /* TrainExplanationPresenter.swift */; };
+		8A57804E27F2E4D0007D2441 /* TrainExplanation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A57804D27F2E4D0007D2441 /* TrainExplanation.json */; };
+		8A57805027F2E644007D2441 /* TrainExplanation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A57804F27F2E644007D2441 /* TrainExplanation.swift */; };
 		8A6B1D7627E2339100ED7403 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B1D7527E2339100ED7403 /* AppDelegate.swift */; };
 		8A6B1D7827E2339100ED7403 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B1D7727E2339100ED7403 /* SceneDelegate.swift */; };
 		8A6B1D7A27E2339100ED7403 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6B1D7927E2339100ED7403 /* DayViewController.swift */; };
@@ -36,9 +39,12 @@
 /* Begin PBXFileReference section */
 		8A0F38F427EF1A6D003B481A /* TrainingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingData.swift; sourceTree = "<group>"; };
 		8A0F38F627EF1EA6003B481A /* DataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataMethods.swift; sourceTree = "<group>"; };
-		8A0F390027EF4CBC003B481A /* DifficultyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyPresenter.swift; sourceTree = "<group>"; };
 		8A0F390627EF4D99003B481A /* DifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyViewController.swift; sourceTree = "<group>"; };
 		8A1F491B27EA63A800366861 /* CircleTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTimerView.swift; sourceTree = "<group>"; };
+		8A57804927F1EB54007D2441 /* TrainExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainExplanationViewController.swift; sourceTree = "<group>"; };
+		8A57804B27F1EB66007D2441 /* TrainExplanationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainExplanationPresenter.swift; sourceTree = "<group>"; };
+		8A57804D27F2E4D0007D2441 /* TrainExplanation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = TrainExplanation.json; sourceTree = "<group>"; };
+		8A57804F27F2E644007D2441 /* TrainExplanation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainExplanation.swift; sourceTree = "<group>"; };
 		8A6B1D7227E2339100ED7403 /* pg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A6B1D7527E2339100ED7403 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8A6B1D7727E2339100ED7403 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				8A0F38FC27EF4CBB003B481A /* View */,
-				8A0F38FF27EF4CBC003B481A /* Presenter */,
 			);
 			name = ChoosingDifficultyScreen;
 			path = Model/ChoosingDifficultyScreen;
@@ -109,14 +114,6 @@
 				8A0F390627EF4D99003B481A /* DifficultyViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		8A0F38FF27EF4CBC003B481A /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				8A0F390027EF4CBC003B481A /* DifficultyPresenter.swift */,
-			);
-			path = Presenter;
 			sourceTree = "<group>";
 		};
 		8A0F390827EF4EB8003B481A /* TrainingScreen */ = {
@@ -140,6 +137,31 @@
 			isa = PBXGroup;
 			children = (
 				8AA6703827F08328007BCED0 /* TrainingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		8A57804627F1EB16007D2441 /* TrainingExplanation */ = {
+			isa = PBXGroup;
+			children = (
+				8A57804727F1EB2E007D2441 /* View */,
+				8A57804827F1EB34007D2441 /* Presenter */,
+			);
+			path = TrainingExplanation;
+			sourceTree = "<group>";
+		};
+		8A57804727F1EB2E007D2441 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8A57804927F1EB54007D2441 /* TrainExplanationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8A57804827F1EB34007D2441 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8A57804B27F1EB66007D2441 /* TrainExplanationPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -210,6 +232,7 @@
 				8A0F38FB27EF4CBB003B481A /* ChoosingDifficultyScreen */,
 				8A93CC9127E50EE400B9BAC0 /* ChoosingDayScreen */,
 				8AA6703A27F0B145007BCED0 /* TrainingDescription */,
+				8A57804627F1EB16007D2441 /* TrainingExplanation */,
 				8A0F390827EF4EB8003B481A /* TrainingScreen */,
 			);
 			path = Presentation;
@@ -229,6 +252,7 @@
 			children = (
 				8A0F38F427EF1A6D003B481A /* TrainingData.swift */,
 				8A0F38F627EF1EA6003B481A /* DataMethods.swift */,
+				8A57804F27F2E644007D2441 /* TrainExplanation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +307,7 @@
 				8AE17A3B27EFA1AC0021229A /* TrainingDataBeginner.json */,
 				8AE17A3E27EFA3EB0021229A /* TrainingDataExpert.json */,
 				8AE17A4027EFA41B0021229A /* TrainingDataMaster.json */,
+				8A57804D27F2E4D0007D2441 /* TrainExplanation.json */,
 			);
 			path = TrainingData;
 			sourceTree = "<group>";
@@ -348,6 +373,7 @@
 			files = (
 				8AE17A3C27EFA1AC0021229A /* TrainingDataBeginner.json in Resources */,
 				8AE17A3F27EFA3EB0021229A /* TrainingDataExpert.json in Resources */,
+				8A57804E27F2E4D0007D2441 /* TrainExplanation.json in Resources */,
 				8A6B1D8227E2339300ED7403 /* LaunchScreen.storyboard in Resources */,
 				8AE17A4127EFA41B0021229A /* TrainingDataMaster.json in Resources */,
 				8A6B1D7F27E2339300ED7403 /* Assets.xcassets in Resources */,
@@ -408,6 +434,8 @@
 				8A6B1D7A27E2339100ED7403 /* DayViewController.swift in Sources */,
 				8A1F491C27EA63A800366861 /* CircleTimerView.swift in Sources */,
 				8AA6704027F0B1C0007BCED0 /* TrainingDescriptionPresenter.swift in Sources */,
+				8A57805027F2E644007D2441 /* TrainExplanation.swift in Sources */,
+				8A57804A27F1EB54007D2441 /* TrainExplanationViewController.swift in Sources */,
 				8A0F38F527EF1A6D003B481A /* TrainingData.swift in Sources */,
 				8A6B1D7627E2339100ED7403 /* AppDelegate.swift in Sources */,
 				8A93CC8C27E244AF00B9BAC0 /* DayCollectionViewCell.swift in Sources */,
@@ -417,9 +445,9 @@
 				8A6B1D7827E2339100ED7403 /* SceneDelegate.swift in Sources */,
 				8AA6704427F0B20C007BCED0 /* TrainingDescriptionCollectionViewCell.swift in Sources */,
 				8AE17A3A27EF85430021229A /* DifficultyButton.swift in Sources */,
+				8A57804C27F1EB66007D2441 /* TrainExplanationPresenter.swift in Sources */,
 				8AA6703927F08328007BCED0 /* TrainingPresenter.swift in Sources */,
 				8A0F390727EF4D99003B481A /* DifficultyViewController.swift in Sources */,
-				8A0F390527EF4CBC003B481A /* DifficultyPresenter.swift in Sources */,
 				8A93CC9827E5101000B9BAC0 /* DayCellPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

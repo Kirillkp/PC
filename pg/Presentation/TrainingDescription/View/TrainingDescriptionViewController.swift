@@ -54,14 +54,11 @@ final class TrainingDescriptionViewController: UIViewController {
 extension TrainingDescriptionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print("Кол-во в TrainingDescriptionViewController \(presenter.numbersOfRows())")
         return presenter.numbersOfRows()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TrainingDescriptionCollectionViewCell.identifier, for: indexPath) as! TrainingDescriptionCollectionViewCell
-//        let cellPresenter = presenter.dayCurrentTrain(indexPath: indexPath)
-//        cell.presenter = cellPresenter
         let currentTrain = presenter.fetchCurrentTrain()[0].training[indexPath.row]
         cell.imageTrainView.image = UIImage(named: currentTrain.image)
         cell.nameTrainLabel.text = currentTrain.name
@@ -70,7 +67,9 @@ extension TrainingDescriptionViewController: UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let viewTrainExplanation = TrainExplanationViewController()
+        viewTrainExplanation.presenter.appendExplanationTrain(train: self.presenter.fetchCurrentTrain()[0].training[indexPath.row])
+        navigationController?.present(viewTrainExplanation, animated: true, completion: nil)
     }
     
 }

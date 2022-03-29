@@ -23,4 +23,16 @@ class DataMethods {
             }
         }
     }
+    
+    func fetchExplanationTrain(forResource: String, completion: @escaping ([TrainExplanation]) -> Void) {
+        if let url = Bundle.main.url(forResource: forResource, withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let arrayTrain = try JSONDecoder().decode([TrainExplanation].self, from: data)
+                completion(arrayTrain)
+            } catch {
+                print("Error!! Unable to parse .json")
+            }
+        }
+    }
 }
