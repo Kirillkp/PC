@@ -40,7 +40,6 @@ final class DayViewController: UIViewController {
 extension DayViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("Кол-во в DayViewController \(presenter.numbersOfRows())")
         return presenter.numbersOfRows()
     }
     
@@ -53,7 +52,6 @@ extension DayViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let trainDescriptionView = TrainingDescriptionViewController()
-        print("Отправил currentTrain в TrainDescription \(presenter.fetchArrayTrainIndexPath(indexPath: indexPath))")
         trainDescriptionView.presenter.appendDataCurrentTrain(data: presenter.fetchArrayTrainIndexPath(indexPath: indexPath))
         navigationController?.pushViewController(trainDescriptionView, animated: true)
     }

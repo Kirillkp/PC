@@ -34,7 +34,6 @@ final class TrainingPresenter: TrainingPresenterType {
     var timme: Int = 5
     func appendCurrentTrain(train: [TrainingData]) {
         currentTrain = train
-        print("Выбранная тренировка в TrainingView \(currentTrain)")
     }
     
     func iterationTrainingFunc(timeLabel: UILabel, nameTrain: UILabel, imageTrain: UIImageView, circleTimerView: CircleTimerView) {
